@@ -25,6 +25,7 @@
  * @var array<string,string> $messages                   An array of user-facing messages, managed by the View.
  * @var boolean              $hide_if_no_upcoming_events Hide widget if no events.
  * @var string               $json_ld_data               The JSON-LD for widget events, if enabled.
+ * @var boolean              $jsonld_enable              The JSON-LD for widget events, if enabled.
  * @var string               $widget_title               The title of the widget.
  */
 
@@ -49,7 +50,9 @@ if ( empty( $events ) && $hide_if_no_upcoming_events ) {
 	>
 		<div class="tribe-events-widget-events-list">
 
-			<?php $this->template( 'components/json-ld-data' ); ?>
+			<?php if ( $jsonld_enable ) : ?>
+				<?php $this->template( 'components/json-ld-data' ); ?>
+			<?php endif; ?>
 
 			<?php $this->template( 'components/data' ); ?>
 
