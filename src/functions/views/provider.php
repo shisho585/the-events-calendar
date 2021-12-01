@@ -23,6 +23,8 @@ function tribe_register_view( $slug, $name, $class, $priority = 50, $route_slug 
  * In order the function will check the `TRIBE_EVENTS_V2_VIEWS` constant,
  * the `TRIBE_EVENTS_V2_VIEWS` environment variable and, finally, the `Manager::$option_enabled` option.
  *
+ * @todo ViewsV1Removal: Deprecate. We'll return true and deprecate this so we can slow-remove its usage.
+ *
  * @since 4.9.2
  *
  * @return bool Whether v2 of the Views are enabled or not.
@@ -43,6 +45,8 @@ function tribe_events_views_v2_is_enabled() {
 	 * Allows filtering of the Events Views V2 provider, doing so will render
 	 * the methods and classes no longer load-able so keep that in mind.
 	 *
+	 * @todo ViewsV1Removal: We'll need to remove this filter because we'll always return true.
+	 *
 	 * @since  4.9.2
 	 *
 	 * @param boolean $enabled Determining if V2 Views is enabled\
@@ -54,6 +58,9 @@ function tribe_events_views_v2_is_enabled() {
  * Checks smart activation of the view v2, is not a function for verification of v2 is active or not.
  *
  * Current only being triggered on plugin activation hook.
+ *
+ * @deprecated 5.0.0 ViewsV1Removal: Only applicable with v1 views being active.
+ * @todo ViewsV1Removal: Remove 6.0.0.
  *
  * @since 4.9.13
  *
@@ -104,6 +111,9 @@ function tribe_events_views_v2_smart_activation() {
 /**
  * Returns whether the Event Period repository should be used or not.
  *
+ * @deprecated 5.0.0 ViewsV1Removal: Only applicable with v1 views being active.
+ * @todo ViewsV1Removal: Remove 6.0.0.
+ *
  * @since 4.9.13
  *
  * @return bool whether the Event Period repository should be used or not.
@@ -137,6 +147,8 @@ function tribe_events_view_v2_use_period_repository() {
  * Note the internal logic is inverted, as the name of the function is "...is_enabled"
  * while the names of the constant/env_var are "...DISABLED".
  *
+ * @todo ViewsV1Removal: Deprecate. We'll return true and deprecate this so we can slow-remove its usage.
+ *
  * @since 5.3.0
  *
  * @return bool Whether Widgets v2 should load.
@@ -161,6 +173,8 @@ function tribe_events_widgets_v2_is_enabled() {
 	/**
 	 * Allows toggling of the v2 widget views via a filter. Defaults to true.
 	 *
+	 * @todo ViewsV1Removal: We'll need to remove this filter because we'll always return true.
+	 *
 	 * @since 5.3.0
 	 *
 	 * @return boolean Do we enable the widget views?
@@ -176,6 +190,8 @@ function tribe_events_widgets_v2_is_enabled() {
  *
  * Note the internal logic is inverted, as the name of the function is "...is_enabled"
  * while the names of the constant/env_var are "...DISABLED".
+ *
+ * @todo ViewsV1Removal: Deprecate. We'll return true and deprecate this so we can slow-remove its usage.
  *
  * @since 5.5.0
  *
@@ -200,6 +216,8 @@ function tribe_events_single_view_v2_is_enabled() {
 
 	/**
 	 * Allows toggling of the single event v2 overrides via a filter. Defaults to true.
+	 *
+	 * @todo ViewsV1Removal: We'll need to remove this filter because we'll always return true.
 	 *
 	 * @since 5.5.0
 	 *
