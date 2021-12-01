@@ -103,6 +103,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * @since ??
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
 	 * @return int        The venue ID.
 	 */
@@ -131,7 +133,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * You should escape it wherever you use it!
 	 *
 	 * @since 3.7
-	 * @since5.1.6 remove escaping.
+	 * @since 5.1.6 remove escaping.
 	 *
 	 * @return string The singular version of the Venue Label.
 	 */
@@ -142,7 +144,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 		 *
 		 * @since 3.7
 		 * @since 4.5.12 Added docblock.
-		 * @since5.1.6 Remove escaping.
+		 * @since 5.1.6 Remove escaping.
 		 *
 		 * @param string $label The singular version of the Venue label, defaults to "Venue" (uppercase)
 		 */
@@ -159,7 +161,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * You should escape it wherever you use it!
 	 *
 	 * @since 3.7
-	 * @since5.1.6 remove escaping.
+	 * @since 5.1.6 remove escaping.
 	 *
 	 * @return string The plural version of the Venue Label.
 	 */
@@ -170,7 +172,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 		 *
 		 * @since 3.7
 		 * @since 4.5.12 Added docblock
-		 * @since5.1.6 Remove escaping.
+		 * @since 5.1.6 Remove escaping.
 		 *
 		 * @param string $label The plural version of the Venue label, defaults to "Venues" (uppercase)
 		 */
@@ -184,6 +186,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Returns true or false depending on if the post id for the event has a venue or if the post id is a venue
 	 *
 	 * @since ??
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
 	 * @return bool
@@ -208,6 +212,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * @since ??
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
 	 * @return string Venue Name
 	 */
@@ -231,6 +237,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Returns or display the event Venue Name with a link to the venue
 	 *
 	 * @since ??
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param int  $postId    Either event id or venue id, if none specified, current post is used.
 	 * @param bool $full_link If true outputs a complete HTML <a> link, otherwise only the URL is output
@@ -270,6 +278,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * @since ??
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
 	 * @return string     The escaped country name of the venue.
 	 */
@@ -301,6 +311,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * @since ??
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param int  $postId           Either event id or venue id, if none specified, current post is used.
 	 * @param bool $includeVenueName To include the venue name or not.
 	 * @return string                Formatted event address.
@@ -327,6 +339,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * @since ??
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
 	 * @return bool True if any part of an address exists.
 	 */
@@ -349,6 +363,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Returns the venue street address
 	 *
 	 * @since ??
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
 	 * @return string     The escaped venue street address.
@@ -373,6 +389,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Returns the venue city
 	 *
 	 * @since ??
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
 	 * @return string     The escaped venue city
@@ -400,6 +418,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * @todo Deprecate tribe_get_stateprovince or tribe_get_region
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
 	 * @return string     The escaped venue state or province.
 	 */
@@ -423,6 +443,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Returns the venue state
 	 *
 	 * @since ??
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
 	 * @return string     The escaped venue state or province.
@@ -448,6 +470,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * @since ??
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
 	 * @return string     The escaped venue province.
 	 */
@@ -470,11 +494,13 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Returns the state or province for US or non-US addresses (effectively the same thing as tribe_get_stateprovince())
 	 *
+	 * @todo Deprecate tribe_get_region or tribe_get_stateprovince
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @since ??
 	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
 	 * @return string     The state or province for the event.
-	 * @todo Deprecate tribe_get_region or tribe_get_stateprovince
 	 */
 	function tribe_get_region( $postId = null ) {
 		$venue_id = tribe_get_venue_id( $postId );
@@ -503,6 +529,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Returns the event zip code
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @since ??
 	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
@@ -526,6 +554,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Gets the full region name of a given event's Venue address.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @since ??
 	 *
@@ -553,6 +583,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Returns the coordinates of the venue
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 * @todo Move the code here to Events Calendar Pro.
 	 *
 	 * @since ??
 	 *
@@ -588,6 +621,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Conditional if the venue has it's coordinates overwritten
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @since ??
 	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
@@ -618,6 +653,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Returns the venue phone number
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @since ??
 	 *
 	 * @param int $postId Either event id or venue id, if none specified, current post is used.
@@ -641,6 +678,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Get all the venues
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param bool  $only_with_upcoming Only return venues with upcoming events attached to them.
 	 * @param int   $posts_per_page
@@ -729,6 +768,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Get the link for the venue website.
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @since ??
 	 *
 	 * @param null|int    $post_id The event or venue ID.
@@ -798,6 +839,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Get the link for the venue website.
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @since 5.5.0
 	 *
 	 * @param null|int $post_id The event or venue ID.
@@ -821,6 +864,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Returns the venue website URL related to the current post or for the optionally
 	 * specified post.
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @since ??
 	 *
 	 * @param int|null $post_id The event ID.
@@ -836,6 +881,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Gets venue details for use in some single-event templates.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @since ??
 	 *
@@ -873,6 +920,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Gets the venue name and address on a single line.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @since ??
 	 *
