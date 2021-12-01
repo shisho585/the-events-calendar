@@ -3,6 +3,9 @@
  * The Events Calendar Template Tags
  *
  * Display functions (template-tags) for use in WordPress templates.
+ *
+ * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+ * @todo ViewsV1Removal: Remove 6.0.0.
  */
 
 // Don't load directly
