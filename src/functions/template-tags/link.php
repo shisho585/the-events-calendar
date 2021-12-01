@@ -17,6 +17,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Displays a link to the previous post by start date for the given event
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param bool|string $anchor link text. Use %title% to place the post title in your string.
 	 *
 	 * @see tribe_get_prev_event_link()
@@ -27,6 +29,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Return a link to the previous event by start date for the given event.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param bool|string $anchor link text. Use %title% to place the post title in your string.
 	 *
@@ -51,6 +55,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Display a link to the next post by start date for the given event
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param bool|string $anchor link text. Use %title% to place the post title in your string.
 	 *
 	 * @return void
@@ -62,6 +68,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Return a link to the next post by start date for the given event
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param bool|string $anchor link text. Use %title% to place the post title in your string.
 	 *
@@ -84,6 +92,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Get a link to the previous events
 	 *
+	 * @todo ViewsV1Removal: Deprecate.
+	 *
 	 * @return string
 	 */
 	function tribe_get_previous_events_link() {
@@ -102,6 +112,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Get a link to the next events
+	 *
+	 * @todo ViewsV1Removal: Deprecate.
 	 *
 	 * @return string
 	 */
@@ -123,6 +135,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Link to All Events
 	 *
 	 * Returns a link to the events URL
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param string $context Optional; defaults to 'href'. Can be 'display', in which case non-latin chars are not url-encoded.
 	 * @return string URL
@@ -172,6 +186,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Link to Grid View
 	 *
+	 * @todo ViewsV1Removal: Deprecate.
+	 *
 	 * Returns a link to the general or category calendar grid view
 	 *
 	 * @param string $term Optional event category to link to.
@@ -188,6 +204,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Link to List View
+	 *
+	 * @todo ViewsV1Removal: Deprecate.
 	 *
 	 * Returns a link to the general or category upcoming view
 	 *
@@ -207,6 +225,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns a link to the general or category past view
 	 *
+	 * @todo ViewsV1Removal: Deprecate.
+	 *
 	 * @param int|null $term Term ID
 	 *
 	 * @return string URL
@@ -222,6 +242,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Link to a nearby List View page
 	 *
 	 * Returns a link to the next/previous list view page
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @param string $direction 'next' or 'prev'
 	 * @param int|null $term Term ID
@@ -249,6 +272,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Utility function to update the pagination and current display on the list view.
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @since 4.6.12
 	 *
@@ -289,6 +315,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Validates that the current view is inside of the Two allowed: list or view if not default to the list view.
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @since 4.6.12
 	 *
 	 * @return string
@@ -305,6 +334,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Link to prev List View
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * Returns a link to the previous list view page
 	 *
 	 * @param int|null $term Term ID
@@ -318,6 +350,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Link to next List View
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * Returns a link to the next list view page
 	 *
@@ -334,6 +369,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Single Event Link
 	 *
 	 * Get link to a single event
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param WP_Post|int $post_id   Optional. WP Post that this affects
 	 * @param bool        $full_link Optional. If true outputs a complete HTML <a> link, otherwise only the URL is output
@@ -379,6 +416,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Event Website Link (more info)
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param null|object|int $event
 	 * @param null|string     $label
@@ -458,6 +497,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Event Website URL
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param null|object|int $event
 	 *
