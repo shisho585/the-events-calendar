@@ -15,6 +15,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Display a month
 	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
+	 *
 	 * Inline example:
 	 * < code >
 	 * <?php
@@ -62,6 +65,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Month view conditional tag
 	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
+	 *
 	 * Returns true when on the "real" Month View itself, but not in other secondary instances of the
 	 * Month View like instance of the [tribe_events] shortcode.
 	 *
@@ -86,6 +92,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Used in the month loop.
 	 * Returns true if there are more calendar days available in the loop.
 	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
+	 *
 	 * Example:
 	 * < code >
 	 * <?php
@@ -107,6 +116,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Used in the month loop.
 	 * Advances the loop pointer to the next day, and sets that day up for use.
 	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
+	 *
 	 * Example:
 	 * < code >
 	 * <?php
@@ -126,6 +138,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Used in the month loop.
 	 * Returns the counter for the current week in the month loop
+	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
 	 *
 	 * Example:
 	 * < code >
@@ -148,6 +163,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Used in the month loop.
 	 * Gets the current day in the month loop
 	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
+	 *
 	 * Returned array contains the following elements if the day is in the currently displaying month:
 	 *  'daynum'       => Day of the month (int)
 	 *  'date'         => Complete date (Y-m-d)
@@ -169,6 +187,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Used in the month loop.
 	 * Outputs classes for the current month day, including special classes for past / present / future days
 	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
+	 *
 	 * @see Tribe__Events__Template__Month::day_classes()
 	 **/
 	function tribe_events_the_month_day_classes() {
@@ -179,6 +200,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Used in the month loop.
 	 * Outputs classes for the current single event in the month loop
 	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
+	 *
 	 * @see Tribe__Events__Template__Month::event_classes()
 	 **/
 	function tribe_events_the_month_single_event_classes() {
@@ -188,6 +212,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Returns whether there are any events in the specific month.
 	 * Independently if there are filters or not.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @return bool
 	 * @see Tribe__Events__Template__Month::get_daily_counts()
@@ -200,6 +226,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Returns whether there are any events in the month,
 	 * with the filtered results.
+	 *
+	 * @todo ViewsV1Removal: Update to v2 not necessily required, but would be a really nice to have.
 	 *
 	 * @return bool
 	 *
@@ -222,6 +250,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Drop Menu Post Link
 	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
+	 *
 	 * Returns the URL where the jump menu sends the month/year request.
 	 *
 	 * @return string URL
@@ -235,6 +266,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Month View Date
+	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
 	 *
 	 * Get current calendar month view date
 	 *
@@ -278,6 +312,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * No link will be returned if the link is to a month that precedes any existing
 	 * events.
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @uses tribe_get_previous_month_text()
 	 **/
 	function tribe_events_the_previous_month_link() {
@@ -297,6 +333,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Display an html link to the next month. Used in the month navigation.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @uses tribe_get_next_month_text()
 	 **/
@@ -321,6 +359,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns a link to the previous month's events page. Used in the month view.
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @return string URL
 	 */
 	function tribe_get_previous_month_link() {
@@ -344,6 +384,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns a textual description of the previous month
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @return string Name of the previous month.
 	 */
 	function tribe_get_previous_month_text() {
@@ -357,6 +399,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Link to Next Month
 	 *
 	 * Returns a link to the next month's events page. Used in the month view.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @return string URL
 	 */
@@ -385,6 +429,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns a textual description of the current month
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @return string Name of the current month.
 	 */
 	function tribe_get_current_month_text() {
@@ -397,6 +443,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Next Month Text
 	 *
 	 * Returns a textual description of the next month
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @return string Name of the next month.
 	 */
