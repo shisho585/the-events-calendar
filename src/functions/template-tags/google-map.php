@@ -45,6 +45,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns a url to google maps for the given event
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Events
 	 *
 	 * @param string $postId
@@ -60,6 +62,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Returns a formed HTML link to Google Maps for the given event.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @category Events
 	 *
@@ -89,6 +93,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns an embedded google maps for an event
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Events
 	 *
 	 * @param string $post_id
@@ -106,6 +112,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Google Map Embed Test
 	 *
 	 * Check if embed google map is enabled for this event (or venue ).
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @category Events
 	 *
@@ -135,6 +143,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Check if google map link is enabled for this event
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Events
 	 *
 	 * @param int $postId Id of the post, if none specified, current post is used
@@ -161,6 +171,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * See https://developers.google.com/maps/documentation/embed/guide for more info.
 	 *
 	 * @since 4.6.24
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param string $address_string The full address for the marker to be shown on the map (e.g. an event venue).
 	 */
