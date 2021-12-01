@@ -6,6 +6,9 @@ if ( ! function_exists( 'tribe_is_day' ) ) {
 	 *
 	 * Returns true if the query is set for single day, false otherwise
 	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
+	 *
 	 * @category Events
 	 * @return bool
 	 */
@@ -21,6 +24,8 @@ if ( ! function_exists( 'tribe_is_day' ) ) {
 if ( ! function_exists( 'tribe_get_day_link' ) ) {
 	/**
 	 * Link Event Day
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @category Events
 	 * @param string $date
@@ -39,6 +44,9 @@ if ( ! function_exists( 'tribe_get_linked_day' ) ) {
 	 * Day View Link
 	 *
 	 * Get a link to day view
+	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
 	 *
 	 * @category Events
 	 * @param string $date
@@ -59,6 +67,9 @@ if ( ! function_exists( 'tribe_get_linked_day' ) ) {
 if ( ! function_exists( 'tribe_the_day_link' ) ) {
 	/**
 	 * Output an html link to a day
+	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
 	 *
 	 * @category Events
 	 * @param string $date 'previous day', 'next day', 'yesterday', 'tomorrow', or any date string that strtotime() can parse
@@ -93,6 +104,9 @@ if ( ! function_exists( 'tribe_get_the_day_link_label' ) ) {
 	/**
 	 * Get the label for the day navigation link
 	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
+	 *
 	 * @category Events
 	 * @param string $date_description
 	 *
@@ -120,6 +134,9 @@ if ( ! function_exists( 'tribe_get_the_day_link_date' ) ) {
 	/**
 	 * Get the date for the day navigation link.
 	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
+	 *
 	 * @category Events
 	 * @param string $date_description
 	 *
@@ -145,6 +162,9 @@ if ( ! function_exists( 'tribe_get_next_day_date' ) ) {
 	/**
 	 * Get the next day's date
 	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
+	 *
 	 * @category Events
 	 * @param string $start_date
 	 *
@@ -165,6 +185,9 @@ if ( ! function_exists( 'tribe_get_next_day_date' ) ) {
 if ( ! function_exists( 'tribe_get_previous_day_date' ) ) {
 	/**
 	 * Get the previous day's date
+	 *
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 * @todo ViewsV1Removal: Remove 6.0.0.
 	 *
 	 * @category Events
 	 * @param string $start_date
