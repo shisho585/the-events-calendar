@@ -7,11 +7,34 @@ if ( ! function_exists( 'tribe_get_single_ical_link' ) ) {
 	/**
 	 * iCal Link (Single)
 	 *
-	 * Returns an ical feed for a single event. Must be used in the loop.
+	 * Returns a iCalendar feed for a single event. Must be used in the loop.
+	 *
+	 * @return string URL for iCalendar for single event.
+	 */
+	function tribe_get_single_ical_link() {
+		$output = tribe( 'tec.iCal' )->get_ical_link( 'single' );
+
+		/**
+		 * Filters the "Add to iCalendar" link on single events.
+		 *
+		 * @param string $output The URL for the "Export Event" iCalendar link on single events.
+		 */
+		return apply_filters( 'tribe_get_single_ical_link', $output );
+	}
+}
+
+/**
+ * @todo [BTRIA-614]: two functions that do the exact same thing
+ */
+if ( ! function_exists( 'tribe_get_single_ics_link' ) ) {
+	/**
+	 * ics Link (Single)
+	 *
+	 * Returns an ics feed for a single event. Must be used in the loop.
 	 *
 	 * @return string URL for ical for single event.
 	 */
-	function tribe_get_single_ical_link() {
+	function tribe_get_single_ics_link() {
 		$output = tribe( 'tec.iCal' )->get_ical_link( 'single' );
 
 		/**
@@ -19,7 +42,7 @@ if ( ! function_exists( 'tribe_get_single_ical_link' ) ) {
 		 *
 		 * @param string $output The URL for the "Export Event" iCal link on single events.
 		 */
-		return apply_filters( 'tribe_get_single_ical_link', $output );
+		return apply_filters( 'tribe_get_single_ics_link', $output );
 	}
 }
 

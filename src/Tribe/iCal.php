@@ -79,6 +79,19 @@ class Tribe__Events__iCal {
 	}
 
 	/**
+	 * Returns the url for the iCal generator for lists of posts.
+	 *
+	 * @param string $type The type of iCal link to return, defaults to 'home'.
+	 *
+	 * @return string
+	 */
+	public function get_ics_link( $type = 'home' ) {
+		$tec = Tribe__Events__Main::instance();
+
+		return add_query_arg( [ 'ical' => 1 ], $tec->getLink( $type ) );
+	}
+
+	/**
 	 * Make sure when we grab a month link it includes the correct month.
 	 *
 	 * @param string $event_date Date of the month we are getting the link for.
@@ -130,7 +143,7 @@ class Tribe__Events__iCal {
 		}
 		$calendar_links = '<div class="tribe-events-cal-links">';
 		$calendar_links .= '<a class="tribe-events-gcal tribe-events-button" href="' . Tribe__Events__Main::instance()->esc_gcal_url( tribe_get_gcal_link() ) . '" target="_blank" rel="noopener noreferrer" title="' . esc_attr__( 'Add to Google Calendar', 'the-events-calendar' ) . '">+ ' . esc_html__( 'Google Calendar', 'the-events-calendar' ) . '</a>';
-		$calendar_links .= '<a class="tribe-events-ical tribe-events-button" href="' . esc_url( tribe_get_single_ical_link() ) . '" title="' . esc_attr__( 'Download .ics file', 'the-events-calendar' ) . '" >+ ' . esc_html__( 'Add to iCalendar', 'the-events-calendar' ) . '</a>';
+		$calendar_links .= '<a class="tribe-events-ical tribe-events-button" href="' . esc_url( tribe_get_single_ical_link() ) . '" title="' . esc_attr__( 'Add to iCalendar', 'the-events-calendar' ) . '" >+ ' . esc_html__( 'Add to iCalendar', 'the-events-calendar' ) . '</a>';
 		$calendar_links .= '</div><!-- .tribe-events-cal-links -->';
 
 		/**

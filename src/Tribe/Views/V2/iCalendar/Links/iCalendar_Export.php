@@ -56,8 +56,11 @@ class iCalendar_Export extends Link_Abstract {
 	 * {@inheritDoc}
 	 */
 	public function get_uri( View $view = null ) {
+		// No view? Single event.
 		if ( null === $view ) {
-			return '';
+			$tec = \Tribe__Events__Main::instance();
+			$link = add_query_arg( [ 'ical' => 1 ], $tec->getLink( 'single' ) );
+			return $link;
 		}
 
 		$template_vars = $view->get_template_vars();

@@ -20,6 +20,7 @@ if ( post_password_required() ) {
 
 $has_google_cal = $this->attr( 'hasGoogleCalendar' );
 $has_ical       = $this->attr( 'hasiCal' );
+$has_ics        = $this->attr( 'hasIcs' );
 $should_render  = $has_google_cal || $has_ical;
 
 if ( ! $should_render ) {
@@ -37,6 +38,12 @@ if ( $has_ical ) {
 	$ical_link = $subscribe_links ? $subscribe_links[ 'ical' ]->get_uri( null ) : tribe_get_single_ical_link();
 }
 
+if ( $has_ics ) {
+	$link = $subscribe_links[ 'ics' ]->get_uri( null );
+	$ics_link = $subscribe_links ? $subscribe_links[ 'ics' ]->get_uri( null ) : '';
+}
+
+$foo = '';
 ?>
 <div class="tribe-block tribe-block__events-link">
 	<?php if ( $has_google_cal ) : ?>
@@ -61,6 +68,18 @@ if ( $has_ical ) {
 			>
 				<img src="<?php echo Tribe__Main::instance()->plugin_url  . 'src/modules/icons/link.svg'; ?>" />
 				<?php echo esc_html( $this->attr( 'iCalLabel' ) ) ?>
+			</a>
+		</div>
+	<?php endif; ?>
+	<?php if ( $has_ics ) : ?>
+		<div class="tribe-block__btn--link tribe-block__-events-ics">
+			<a
+				href="<?php echo esc_url( $ical_link ); ?>"
+				rel="noopener noreferrer nofollow"
+				title="<?php esc_attr_e( 'Export via .ics', 'the-events-calendar' ); ?>"
+			>
+				<img src="<?php echo Tribe__Main::instance()->plugin_url  . 'src/modules/icons/link.svg'; ?>" />
+				<?php echo esc_html( $this->attr( 'icsLabel' ) ) ?>
 			</a>
 		</div>
 	<?php endif; ?>

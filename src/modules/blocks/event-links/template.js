@@ -25,6 +25,7 @@ const { InspectorControls } = wpEditor;
 
 const googleCalendarPlaceholder = __( 'Add to Google Calendar', 'the-events-calendar' );
 const iCalExportPlaceholder = __( 'Add to iCalendar', 'the-events-calendar' );
+const icsExportPlaceholder = __( 'Export via ics', 'the-events-calendar' );
 
 const renderPlaceholder = ( label ) => (
 	<button className="tribe-editor__btn--link tribe-editor__btn--placeholder" disabled>
@@ -37,9 +38,9 @@ const renderGoogleCalendar = ( {
 	attributes,
 	setGoogleCalendarLabel,
 } ) => {
-	const { hasiCal, hasGoogleCalendar, googleCalendarLabel } = attributes;
+	const { hasIcs, hasiCal, hasGoogleCalendar, googleCalendarLabel } = attributes;
 
-	if ( ! hasGoogleCalendar && ! hasiCal ) {
+	if ( ! hasGoogleCalendar && ! hasiCal&& ! hasIcs ) {
 		return renderPlaceholder( googleCalendarPlaceholder );
 	}
 
@@ -61,9 +62,9 @@ const renderiCal = ( {
 	attributes,
 	setiCalLabel,
 } ) => {
-	const { hasiCal, hasGoogleCalendar, iCalLabel } = attributes;
+	const { hasIcs, hasiCal, hasGoogleCalendar, iCalLabel } = attributes;
 
-	if ( ! hasGoogleCalendar && ! hasiCal ) {
+	if ( ! hasGoogleCalendar && ! hasiCal && ! hasIcs ) {
 		return renderPlaceholder( iCalExportPlaceholder );
 	}
 
@@ -82,10 +83,36 @@ const renderiCal = ( {
 	);
 };
 
+const renderIcs = ( {
+	attributes,
+	setIcsLabel,
+} ) => {
+	const { hasIcs, hasiCal, hasGoogleCalendar, icsLabel } = attributes;
+
+	if ( ! hasGoogleCalendar && ! hasiCal && ! hasIcs ) {
+		return renderPlaceholder( icsExportPlaceholder );
+	}
+
+	return hasIcs && (
+		<div className="tribe-editor__btn--link tribe-events-ical">
+			<LinkIcon />
+			<AutosizeInput
+				id="tribe-event-ical"
+				name="tribe-event-ical"
+				className="tribe-editor__btn-input"
+				value={ icsLabel }
+				placeholder={ icsExportPlaceholder }
+				onChange={ setIcsLabel }
+			/>
+		</div>
+	);
+};
+
 const renderButtons = ( props ) => (
 	<div key="event-links" className="tribe-editor__block tribe-editor__events-link">
 		{ renderGoogleCalendar( props ) }
 		{ renderiCal( props ) }
+		{ renderIcs( props ) }
 	</div>
 );
 
@@ -93,9 +120,10 @@ const renderControls = ( {
 	attributes,
 	isSelected,
 	toggleIcalLabel,
+	toggleIcsLabel,
 	toggleGoogleCalendar,
 } ) => {
-	const { hasGoogleCalendar, hasiCal } = attributes;
+	const { hasGoogleCalendar, hasiCal, hasIcs } = attributes;
 
 	return (
 		isSelected && (
@@ -111,6 +139,11 @@ const renderControls = ( {
 						checked={ hasiCal }
 						onChange={ toggleIcalLabel }
 					/>
+					<ToggleControl
+						label={ __( 'ics Export', 'the-events-calendar' ) }
+						checked={ hasIcs }
+						onChange={ toggleIcsLabel }
+					/>
 				</PanelBody>
 			</InspectorControls>
 		)
@@ -121,15 +154,19 @@ const EventLinks = ( props ) => {
 	const { setAttributes } = props;
 
 	const setiCalLabel = e => setAttributes( { iCalLabel: e.target.value } );
+	const setIcsLabel = e => setAttributes( { icsLabel: e.target.value } );
 	const setGoogleCalendarLabel = e => setAttributes( { googleCalendarLabel: e.target.value } );
 	const toggleIcalLabel = value => setAttributes( { hasiCal: value } );
+	const toggleIcsLabel = value => setAttributes( { hasIcs: value } );
 	const toggleGoogleCalendar = value => setAttributes( { hasGoogleCalendar: value } );
 
 	const combinedProps = {
 		...props,
 		setiCalLabel,
+		setIcsLabel,
 		setGoogleCalendarLabel,
 		toggleIcalLabel,
+		toggleIcsLabel,
 		toggleGoogleCalendar,
 	};
 
@@ -142,12 +179,16 @@ const EventLinks = ( props ) => {
 EventLinks.propTypes = {
 	hasGoogleCalendar: PropTypes.bool,
 	hasiCal: PropTypes.bool,
+	hasIcs: PropTypes.bool,
 	isSelected: PropTypes.bool,
 	googleCalendarLabel: PropTypes.string,
+	setGoogleCalendarLabel: PropTypes.func,
 	iCalLabel: PropTypes.string,
 	setiCalLabel: PropTypes.func,
-	setGoogleCalendarLabel: PropTypes.func,
+	icsLabel: PropTypes.string,
+	setIcsLabel: PropTypes.func,
 	toggleIcalLabel: PropTypes.func,
+	toggleIcsLabel: PropTypes.func,
 	toggleGoogleCalendar: PropTypes.func,
 };
 
