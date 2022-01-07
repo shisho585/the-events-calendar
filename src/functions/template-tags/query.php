@@ -10,6 +10,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Conditional tag to check if current page is an event category page
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @return bool
 	 **/
 	function tribe_is_event_category() {
@@ -25,6 +27,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Conditional tag to check if current page is an event venue page
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @return bool
 	 **/
@@ -42,6 +46,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Conditional tag to check if current page is an event organizer page
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @return bool
 	 **/
 	function tribe_is_event_organizer() {
@@ -57,6 +63,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Conditional tag to check if current page is displaying event query
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @return bool
 	 **/
@@ -76,8 +84,11 @@ if ( ! function_exists( 'tribe_is_community_my_events_page' ) ) {
 	/**
 	 * Tests if the current page is the My Events page
 	 *
-	 * @return bool whether it is the My Events page.
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @since 1.0.1
+	 *
+	 * @return bool whether it is the My Events page.
 	 */
 	function tribe_is_community_my_events_page() {
 		if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
@@ -92,9 +103,11 @@ if ( ! function_exists( 'tribe_is_community_edit_event_page' ) ) {
 	/**
 	 * Tests if the current page is the Edit Event page
 	 *
-	 * @return bool whether it is the Edit Event page.
-	 * @author Paul Hughes
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @since 1.0.1
+	 *
+	 * @return bool whether it is the Edit Event page.
 	 */
 	function tribe_is_community_edit_event_page() {
 		if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {

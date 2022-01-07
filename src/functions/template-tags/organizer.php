@@ -19,6 +19,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns the event Organizer ID.
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param int $postId Can supply either event id or organizer id.
 	 *                    If none specified, current post is used.
 	 *                    If given an event with multiple organizers,
@@ -45,6 +47,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Get the IDs of all organizers associated with an event.
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param int $event_id The event post ID. Defaults to the current event.
 	 *
 	 * @return array
@@ -70,7 +74,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * on the meta field.
 	 *
 	 * @deprecated 4.6.23
-	 * @todo Remove on 4.7
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @since 4.6.15
 	 *
@@ -111,7 +116,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * You should escape it wherever you use it!
 	 *
 	 * @since 3.7
-	 * @since5.1.6 remove escaping.
+	 * @since 5.1.6 remove escaping.
 	 *
 	 * @return string The singular version of the Organizer Label.
 	 */
@@ -139,7 +144,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * You should escape it wherever you use it!
 	 *
 	 * @since 3.7
-	 * @since5.1.6 remove escaping.
+	 * @since 5.1.6 remove escaping.
 	 *
 	 * @return string The plural version of the Organizer Label.
 	 */
@@ -182,6 +187,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Typically this is a pipe separated format containing the organizer's telephone
 	 * number, email address and website where available.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param int $post_id Either the organizer or event ID, if none specified, current post is used.
 	 *
@@ -226,6 +233,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns the name of the Organizer
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param int $postId Either event id or organizer id, if none specified, current post is used.
 	 *
 	 * @return string Organizer's Name
@@ -244,6 +253,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Organizer Test
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * Returns true or false depending on if the post id has/is an organizer
 	 *
 	 * @param int $postId Either event id or organizer id, if none specified, current post is used.
@@ -261,6 +272,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Organizer Email
 	 *
 	 * Returns the Organizer's Email.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param int  $postId      Either event id or organizer id, if none specified, current post is used.
 	 * @param bool $antispambot Whether the email should pass through the `antispambot` function or not.
@@ -289,6 +302,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Organizer Page Link
 	 *
 	 * Returns the event Organizer Name with a link to their single organizer page.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param int  $post_id   Either event id or organizer id, if none specified, current post is used.
 	 * @param bool $full_link If true outputs a complete HTML <a> link, otherwise only the URL is output.
@@ -364,6 +379,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns the event Organizer's phone number
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @param int $postId Can supply either event id or organizer id, if none specified, current post is used
 	 *
 	 * @return string Organizer's Phone Number
@@ -379,6 +396,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Organizer website url
 	 *
 	 * Returns the url to the event Organizer's supplied website.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param $postId post ID for an event
 	 *
@@ -397,6 +416,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Organizer website link
 	 *
 	 * Returns the event Organizer Name with a link to their supplied website
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param null|int    $post_id The post ID for an event.
 	 * @param null|string $label   The text for the link.
@@ -482,6 +503,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Get all the organizers
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param bool  $only_with_upcoming Only return organizers with upcoming events attached to them.
 	 * @param int   $posts_per_page

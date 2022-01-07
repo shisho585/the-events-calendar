@@ -17,6 +17,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Instantiate the template class, preparing a view file for use. If no name is passed, defaults to the class for the current view
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @param bool|string $class Classname you want to instantiate
 	 *
 	 * @uses Tribe__Events__Templates::instantiate_template_class()
@@ -28,6 +31,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Includes a view file, runs hooks around the view
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @param bool|string $view View slug
 	 *
@@ -57,7 +63,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * You should escape it wherever you use it!
 	 *
 	 * @since 3.10
-	 * @since5.1.6 remove escaping.
+	 * @since 5.1.6 remove escaping.
 	 *
 	 * @return string The singular version of the Event Label.
 	 */
@@ -85,7 +91,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * You should escape it wherever you use it!
 	 *
 	 * @since 4.1.1
-	 * @since5.1.6 remove escaping.
+	 * @since 5.1.6 remove escaping.
 	 *
 	 * @return string The lowercase singular version of the Event Label.
 	 */
@@ -113,7 +119,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * You should escape it wherever you use it!
 	 *
 	 * @since 3.10
-	 * @since5.1.6 remove escaping.
+	 * @since 5.1.6 remove escaping.
 	 *
 	 * @return string The plural version of the Event Label.
 	 */
@@ -141,7 +147,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * You should escape it wherever you use it!
 	 *
 	 * @since 4.1.1
-	 * @since5.1.6 remove escaping.
+	 * @since 5.1.6 remove escaping.
 	 *
 	 * @return string The lowercase plural version of the Event Label.
 	 */
@@ -211,6 +217,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Check if the current request is for a tribe view via ajax
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @category Events
 	 * @param bool $view
 	 * @return bool
@@ -242,6 +251,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Checks type of $postId to determine if it is an Event
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Events
 	 * @param int|WP_Post The event/post id or object. (optional)
 	 *
@@ -261,6 +272,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Get Event
 	 *
 	 * Queries the events using WordPress get_posts() by setting the post type and sorting by event date.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @category Events
 	 *
@@ -303,6 +316,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Optionally the post object or ID of an event can be passed in and,
 	 * again, the event post object will be returned if possible.
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Events
 	 * @param $event
 	 * @return null|WP_Post
@@ -334,6 +349,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns true if the event is an all day event
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Events
 	 * @param int $postId (optional)
 	 *
@@ -349,6 +366,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Multi-day Event Test
 	 *
 	 * Returns true if the event spans multiple days
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @category Events
 	 * @param int $postId (optional)
@@ -370,6 +389,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Detect if an Event is Past
 	 *
 	 * Returns true if the current time is past the event end time
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param null $event
 	 *
@@ -416,6 +437,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Display the event category ID as a class for events wrapper
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Events
 	 * @uses wp_get_object_terms()
 	 */
@@ -430,6 +453,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Event Category slugs
 	 *
 	 * Display the event category ID as a class for events wrapper
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @category Events
 	 * @uses wp_get_object_terms()
@@ -452,6 +478,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Single event taxonomy terms
 	 *
 	 * Get the term list by taxonomy (default categories) for a single event
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @category Events
 	 * @param  int   $post_id
@@ -479,6 +507,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Event Categories (Display)
 	 *
 	 * Display the event categories with display param
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @category Events
 	 * @uses     tribe_get_event_taxonomy()
@@ -565,6 +595,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Get event post meta.
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Events
 	 * @param int|null    $postId (optional)
 	 * @param string|bool $meta   name of the meta_key
@@ -585,6 +617,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Return the current event category name based the url.
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @category Events
 	 * @return string Name of the Event Category
 	 */
@@ -602,6 +637,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Current Template
 	 *
 	 * Get the current page template that we are on
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @category Events
 	 * @return string Page template
@@ -631,6 +669,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Checks type of $postId to determine if it is a Organizer
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Organizers
 	 * @param int $postId (optional)
 	 *
@@ -646,6 +686,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * HTML Before Event (Display)
 	 *
 	 * Display HTML to output before the event template
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @category Events
 	 */
@@ -668,6 +710,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Display HTML to output after the event template
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Events
 	 */
 	function tribe_events_after_html() {
@@ -683,6 +727,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Prints out or returns classes on an event wrapper
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @category Events
 	 * @param $event |0 post id or object
@@ -755,6 +802,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Prints out data attributes used in the template header tags
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @category Events
 	 * @param string|null $current_view
@@ -858,6 +908,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Conditional tag to determine if the cost field should be shown in the admin editors.
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Cost
 	 * @return bool
 	 */
@@ -946,6 +998,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Maps the cost array to make finding the minimum and maximum costs possible.
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @category Cost
 	 * @param array $costs
 	 *
@@ -959,6 +1014,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Event in Category Conditional
 	 *
 	 * Returns true if the event is in the specified category slug
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @category Events
 	 * @param string $event_cat_slug
@@ -989,7 +1046,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Placeholder function that is used for ticketing plugins meant to be filtered by such plugins
 	 *
-	 * @todo possible candidate for deprecation - confirm if still required by other plugins
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @category Tickets
 	 */
 	function tribe_get_ticket_form() {
@@ -1010,6 +1069,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * the image URL itself.
 	 *
 	 * @category Events
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param int    $post_id
 	 * @param string $size
@@ -1327,6 +1388,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Returns json for javascript templating functions throughout the plugin.
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @category Events
 	 *
 	 * @param $event
@@ -1418,12 +1482,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Accepts an array of query arguments, retrieves them, and returns the html for those events in list view
 	 *
-	 * Optional inline example:
-	 * < code >
-	 * <?php
-	 * echo myfunction();
-	 * ?>
-	 * </ code >
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 *
 	 * @category Events
 	 *
@@ -1517,6 +1578,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Display the Events Calendar promo banner
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Events
 	 *
 	 * @param bool $echo Whether or not to echo the banner, if false, it's returned
@@ -1538,6 +1601,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Return the filters registered in the tribe bar
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @category Events
 	 *
 	 * @return array
@@ -1549,6 +1615,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Return the views registered in the tribe bar
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @category Events
 	 *
 	 * @return array
@@ -1559,6 +1628,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Returns the URL for use in the tribe bar form's action attribute.
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @return string URL for current tribe bar form action.
 	 */
@@ -1856,6 +1928,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Get the default value for a field
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @param string $field
 	 * @return mixed
 	 */
@@ -1869,6 +1944,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Gets the render context of the given query
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @param WP_Query $query Query object
 	 * @return string
@@ -1993,6 +2071,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Also consider this might not work as expected inside of Ajax Calls as this one is fired on initial loading of the
 	 * page so be aware of unexpected results via Ajax calls.
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @since 4.6.9
 	 *

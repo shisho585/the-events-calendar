@@ -23,6 +23,8 @@ if ( ! function_exists( 'tribe_get_display_end_date' ) ) {
 	 *
 	 * Returns the event end date that observes the end of day cutoff
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @category Events
 	 * @see      http://php.net/manual/en/function.date.php
 	 *
@@ -66,6 +68,8 @@ if ( ! function_exists( 'tribe_event_is_on_date' ) ) {
 	/**
 	 * Given a date and an event, returns true or false if the event is happening on that date
 	 * This function properly adjusts for the EOD cutoff and multi-day events
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param null $date
 	 * @param null $event
@@ -152,6 +156,8 @@ if ( ! function_exists( 'tribe_event_ends_on' ) ) {
 	 * The method id day based, hours and minutes, if provided in the date, are not considered.
 	 *
 	 * @since 4.9
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @param WP_Post|int $event The event post object; the `EventEndDate` property must be set.
 	 * @param mixed      $date  The date to compare the event end date with; it can be an object, string or timestamp.

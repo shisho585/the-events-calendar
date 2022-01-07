@@ -14,6 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * display the events slug description
  *
+ * @todo       ViewsV1Removal: Remove 6.0.0.
+ * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+ *
  * @return string, the string to display
  */
 function tribe_display_current_events_slug() {
@@ -23,6 +26,9 @@ function tribe_display_current_events_slug() {
 /**
  * display the event single slug description
  *
+ * @todo       ViewsV1Removal: Remove 6.0.0.
+ * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+ *
  * @return string, the string to display
  */
 function tribe_display_current_single_event_slug() {
@@ -31,6 +37,9 @@ function tribe_display_current_single_event_slug() {
 
 /**
  * display the iCal description
+ *
+ * @todo       ViewsV1Removal: Remove 6.0.0.
+ * @deprecated 5.0.0 ViewsV1Removal: v1 only.
  *
  * @return string, the string to display
  */

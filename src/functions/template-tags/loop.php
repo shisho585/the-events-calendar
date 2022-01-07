@@ -18,6 +18,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Called inside of the loop, returns true if the current post's meta_value (EventStartDate)
 	 * is different than the previous post. Will always return true for the first event in the loop.
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @return bool
 	 */
 	function tribe_is_new_event_day() {
@@ -55,6 +58,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns true if the query is set for past events, false otherwise
 	 *
+	 * @todo ViewsV1Removal: Update to v2.
+	 *
 	 * @return bool
 	 */
 	function tribe_is_past() {
@@ -77,6 +82,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Upcoming Loop View Test
 	 *
 	 * Returns true if the query is set for upcoming events, false otherwise
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @return bool
 	 */
@@ -125,6 +132,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 *  Check if current display is "bydate"
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @return bool
 	 */
 	function tribe_is_by_date() {
@@ -143,6 +153,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Display an event's title with pseudo-breadcrumb if on a category
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @param bool $depth include linked title
 	 */
 	function tribe_events_title( $depth = true ) {
@@ -160,10 +173,12 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Return an event's title with pseudo-breadcrumb if on a category
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @param bool $depth include linked title
 	 *
 	 * @return string title
-	 * @todo move logic to template classes
 	 */
 	function tribe_get_events_title( $depth = true ) {
 
@@ -241,6 +256,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns a link to the upcoming events in list view. Used in the loop view.
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @return string URL
 	 */
 	function tribe_get_upcoming_link() {
@@ -252,6 +270,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Are there any events previous to the current events in $wp_query
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @return bool
 	 */
@@ -309,6 +330,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Are there any events next (in the future) to the current events in $wp_query
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @return bool
 	 */
@@ -368,6 +392,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * Returns a link to the previous events in list view. Used in the loop view.
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @return string URL
 	 */
 	function tribe_get_past_link() {
@@ -380,6 +407,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Determines if we are in the main Loop (home/archives/tags)
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @return bool
 	 */
 	function tribe_is_in_main_loop() {
@@ -388,6 +418,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Determines if we are in list view.
+	 *
+	 * @todo ViewsV1Removal: Update to v2.
 	 *
 	 * @return bool
 	 */
@@ -398,6 +430,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Used in list loop, displays the date headers between events in the loop when the month / year has changed
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 **/
 	function tribe_events_list_the_date_headers() {
@@ -439,6 +474,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	/**
 	 * Determine classes to apply to left side nav links
 	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
+	 *
 	 * @param $side
 	 */
 	function tribe_left_navigation_classes() {
@@ -459,6 +497,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Determine classes to apply to right side nav links
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @param $side
 	 */
@@ -481,6 +522,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 
 	/**
 	 * Checks whether we're on a particular view
+	 *
+	 * @todo       ViewsV1Removal: Remove 6.0.0.
+	 * @deprecated 5.0.0 ViewsV1Removal: v1 only.
 	 *
 	 * @return bool
 	 **/
