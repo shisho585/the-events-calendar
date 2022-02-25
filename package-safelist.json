@@ -16,6 +16,7 @@
   "src/resources/icons/**/*",
   "src/resources/deprecated/**/*",
   "src/Tribe/**/*",
+  "src/Events/**/*",
   "src/views/**/*",
   "the-events-calendar.php",
   "vendor/autoload.php",
@@ -33,5 +34,6 @@
   "vendor/jquery/smoothness/*.css",
   "vendor/jquery/smoothness/images/*.png",
   "vendor/php-date-formatter/js/*.min.js",
+  "vendor/woocommerce/action-scheduler/*",
   "uninstall.php"
 ]

@@ -22,7 +22,7 @@ class ListStyleHeadingCest {
 	}
 
 	/**
-	 * should render only the now label when all the events are happening o
+	 * should render only the now label when all the events are happening today
 	 *
 	 * @test
 	 */
@@ -44,14 +44,12 @@ class ListStyleHeadingCest {
 	 */
 	public function i_do_see_the_dates_header_on_the_first_page_when_there_are_more_than_one_page_of_results( AcceptanceTester $I ) {
 		$ids                           = $I->haveManyEventsInDatabase( 14, [ 'when' => 'tomorrow' ], 24 );
-		$last_occurrence_of_first_page = $ids[11]; // 12 event 0 based index.
+		$last_occurrence_of_first_page = $ids[11]; // 12th event, 0 based index.
 		$date                          = tribe_get_start_date( $last_occurrence_of_first_page, false, tribe_get_date_option( 'dateWithoutYearFormat', 'F j' ) );
 
 		$I->amOnPage( '/events/list/' );
 		$I->seeNumberOfElements( 'time.tribe-events-c-top-bar__datepicker-time', 2 );
 		$I->seeNumberOfElements( '.tribe-events-c-top-bar__datepicker-separator', 1 );
-
-		codecept_debug( "Looking for label: 'Now - {$date}'" );
 
 		$I->see( 'Now', \Codeception\Util\Locator::firstElement( 'time.tribe-events-c-top-bar__datepicker-time' ) );
 		$I->see( $date, \Codeception\Util\Locator::elementAt( 'time.tribe-events-c-top-bar__datepicker-time', 2 ) );
@@ -64,15 +62,25 @@ class ListStyleHeadingCest {
 	 */
 	public function should_render_the_onwards_label_on_the_last_page_of_results( AcceptanceTester $I ) {
 		$ids                           = $I->haveManyEventsInDatabase( 14, [ 'when' => 'tomorrow' ], 24 );
-		$last_occurrence_of_first_page = $ids[12]; // 13 event
-		$date                          = tribe_get_start_date( $last_occurrence_of_first_page, false, tribe_get_date_option( 'dateWithoutYearFormat', 'F j' ) );
+		$last_occurrence_of_first_page = $ids[12]; // 13th event
+
+		// Account for year-end.
+		$now  = (int) Tribe__Date_Utils::build_date_object()->format('Y');
+		$then = (int) tribe_get_start_date( $last_occurrence_of_first_page, false, 'Y' );
+
+		if ( $then === $now ) {
+			$format = tribe_get_date_option( 'dateWithoutYearFormat', 'F j' );
+		} else {
+			$format = tribe_get_date_option( 'dateWithYearFormat', 'F j, Y' );
+		}
+
+		$date = tribe_get_start_date( $last_occurrence_of_first_page, false, $format );
 
 		$I->amOnPage( '/events/list/page/2/' );
 		$I->seeNumberOfElements( 'time.tribe-events-c-top-bar__datepicker-time', 1 );
 		$I->dontSeeElement( '.tribe-events-c-top-bar__datepicker-separator' );
 
-		codecept_debug( "Looking for label: '{$date} onwards'" );
-		$I->see( "{$date} onwards", \Codeception\Util\Locator::firstElement( 'time.tribe-events-c-top-bar__datepicker-time' ) );
+		$I->see( "{$date} onwards", \Codeception\Util\Locator::firstElement( '.tribe-events-c-top-bar__datepicker-desktop' ) );
 	}
 
 	/**
@@ -89,8 +97,7 @@ class ListStyleHeadingCest {
 		$I->seeNumberOfElements( 'time.tribe-events-c-top-bar__datepicker-time', 1 );
 		$I->dontSeeElement( '.tribe-events-c-top-bar__datepicker-separator' );
 
-		codecept_debug( "Looking for label: '{$date} onwards'" );
-		$I->see( "{$date} onwards", \Codeception\Util\Locator::firstElement( 'time.tribe-events-c-top-bar__datepicker-time' ) );
+		$I->see( "{$date} onwards", \Codeception\Util\Locator::firstElement( '.tribe-events-c-top-bar__datepicker-desktop' ) );
 	}
 
 	/**
@@ -100,8 +107,18 @@ class ListStyleHeadingCest {
 	 */
 	public function renders_the_dates_ranges_if_there_are_multiple_pages_of_events_with_date_filtering( AcceptanceTester $I ) {
 		$ids                           = $I->haveManyEventsInDatabase( 14, [ 'when' => 'tomorrow' ], 24 );
-		$last_occurrence_of_first_page = $ids[11]; // Last element on a 12 events per page setup.
-		$format                        = tribe_get_date_option( 'dateWithoutYearFormat', 'F j' );
+		$last_occurrence_of_first_page = $ids[11]; // Last element on the first page of a 12 events per page setup.
+
+		// Account for year-end.
+		$now  = (int) Tribe__Date_Utils::build_date_object()->format('Y');
+		$then = (int) tribe_get_start_date( $last_occurrence_of_first_page, false, 'Y' );
+
+		if ( $then === $now ) {
+			$format = tribe_get_date_option( 'dateWithoutYearFormat', 'F j' );
+		} else {
+			$format = tribe_get_date_option( 'dateWithYearFormat', 'F j, Y' );
+		}
+
 		$start_date                    = tribe_get_start_date( $ids[0], false, $format );
 		$end_date                      = tribe_get_start_date( $last_occurrence_of_first_page, false, $format );
 
@@ -109,7 +126,6 @@ class ListStyleHeadingCest {
 		$I->seeNumberOfElements( 'time.tribe-events-c-top-bar__datepicker-time', 2 );
 		$I->seeNumberOfElements( '.tribe-events-c-top-bar__datepicker-separator', 1 );
 
-		codecept_debug( "Looking for label: '{$start_date} {$end_date}'" );
 		$I->see( $start_date, \Codeception\Util\Locator::firstElement( 'time.tribe-events-c-top-bar__datepicker-time' ) );
 		$I->see( $end_date, \Codeception\Util\Locator::elementAt( 'time.tribe-events-c-top-bar__datepicker-time', 2 ) );
 	}
@@ -122,14 +138,23 @@ class ListStyleHeadingCest {
 	public function display_onwards_when_visiting_the_last_page_of_events_and_the_date_picker_has_been_used( AcceptanceTester $I ) {
 		$ids                          = $I->haveManyEventsInDatabase( 14, [ 'when' => 'tomorrow' ], 24 );
 		$first_occurrence_second_page = $ids[12]; // First element on the second page of events
-		$format                       = tribe_get_date_option( 'dateWithoutYearFormat', 'F j' );
-		$start_date                   = tribe_get_start_date( $first_occurrence_second_page, false, $format );
+
+		// Account for year-end.
+		$now  = (int) Tribe__Date_Utils::build_date_object()->format('Y');
+		$then = (int) tribe_get_start_date( $first_occurrence_second_page, false, 'Y' );
+
+		if ( $then === $now ) {
+			$format = tribe_get_date_option( 'dateWithoutYearFormat', 'F j' );
+		} else {
+			$format = tribe_get_date_option( 'dateWithYearFormat', 'F j, Y' );
+		}
+
+		$start_date = tribe_get_start_date( $first_occurrence_second_page, false, $format );
 
 		$I->amOnPage( '/events/list/page/2/?tribe-bar-date=' . tribe_get_start_date( $ids[0], false, Tribe__Date_Utils::DBDATEFORMAT ) );
 		$I->seeNumberOfElements( 'time.tribe-events-c-top-bar__datepicker-time', 1 );
 		$I->dontSeeElement( '.tribe-events-c-top-bar__datepicker-separator' );
 
-		codecept_debug( "Looking for label: '{$start_date} onwards'" );
 		$I->see( "{$start_date} onwards", \Codeception\Util\Locator::firstElement( 'time.tribe-events-c-top-bar__datepicker-time' ) );
 	}
 }

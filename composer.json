@@ -33,7 +33,7 @@
     "wp-coding-standards/wpcs": "^2.1",
     "vlucas/phpdotenv": "^4.1"
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
     "preferred-install": "dist",
@@ -43,7 +43,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Tribe\\Events\\" : "src/Tribe"
+      "Tribe\\Events\\" : "src/Tribe",
+      "TEC\\Events\\" : "src/Events"
     }
   },
   "autoload-dev": {
@@ -67,6 +68,7 @@
     }
   ],
   "require": {
+    "woocommerce/action-scheduler": "^3.4.0"
   },
   "scripts": {
     "start-chromedriver": "docker run --rm -d --name chromedriver -p 4444:4444 selenium/standalone-chrome",
