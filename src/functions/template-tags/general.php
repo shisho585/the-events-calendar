@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
+use Tribe\Events\Views\V2\Template_Bootstrap;
 use Tribe__Timezones as Timezones;
 
 if ( class_exists( 'Tribe__Events__Main' ) ) {
@@ -33,13 +34,16 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 **/
 	function tribe_get_view( $view = false ) {
-		if (
-			! in_array( $view, [ 'single-event', 'embed' ] )
-			&& tec_events_views_v1_should_display_deprecated_notice()
-		) {
-			_deprecated_function( __FUNCTION__, '5.13.0', 'On version 6.0.0 this function will be removed. Please refer to <a href="https://evnt.is/v1-removal">https://evnt.is/v1-removal</a> for template customization assistance.' );
-		}
 		do_action( 'tribe_pre_get_view' );
+
+		// @todo: Remove is_enabled check after 6.0.
+		if (
+			tribe_events_views_v2_is_enabled()
+			&& ! is_singular( Tribe__Events__Main::POSTTYPE )
+		) {
+			echo tribe( Template_Bootstrap::class )->get_view_html();
+			return;
+		}
 
 		if ( ! $view ) {
 			$template_file = tribe_get_current_template();
